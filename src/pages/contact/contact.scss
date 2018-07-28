@@ -1,0 +1,48 @@
+page-contact {
+    ion-label{
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+   }
+   
+   .toolbar-background {
+    background-color: rgb(255, 252, 255);
+}
+
+.toolbar-md {
+    padding: 0;
+    min-height: 2.3em;
+  }
+
+.toolbar-title-md {
+    font-size: 1em;
+    font-weight: 300;
+    color: #424242;
+}
+ion-label    {
+    color: #000000fb;
+    font-size: 12px;
+}
+
+button {
+    padding-top: 3px;
+    zoom: 0.7;
+}
+page-tabs ion-icon {
+    display: table-row;
+    zoom: 0.7;
+}
+
+ion-item {
+    height: 6em; /* <- this can be whatever you need */
+    }
+
+    .item-md ion-avatar img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 50px;
+        max-width: 50px;
+        height: 50px;
+    }  
+
+}
+
