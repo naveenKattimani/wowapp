@@ -1,14 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CartPage } from '../cart/cart';
-
-/**
- * Generated class for the BurgerPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { CartServiceProvider } from '../../providers/cart-service/cart-service';
 @IonicPage()
 @Component({
   selector: 'page-burger',
@@ -18,8 +10,8 @@ export class BurgerPage {
   qty: any;
   itemsInCart: Object[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.items.forEach(item => { item.quantity = 0; })
+  constructor(public navCtrl: NavController,  public navParams: NavParams, public cartSvc:CartServiceProvider) {
+    this.items.forEach(item => { item.quantity = 0; });
   }
 
   ionViewDidLoad() {
@@ -27,10 +19,10 @@ export class BurgerPage {
   }
 
   items = [
-    {title:'burger1',cost:"25",quantity:0},
-    {title:'burger2',cost:"35",quantity:0},
-    {title:'burger2',cost:"35",quantity:0},
-    {title:'burger2',cost:"35",quantity:0},
+    {title:'burger1',cost:"25",quantity:0,orderID:'101'},
+    {title:'burger2',cost:"35",quantity:0,orderID:'102'},
+    {title:'burger2',cost:"35",quantity:0,orderID:'103'},
+    {title:'burger2',cost:"35",quantity:0,orderID:'104'},
   ];
 
   itemSelected(item: string) {
@@ -39,13 +31,16 @@ export class BurgerPage {
   
     incrementQty(item: any) {
       item.quantity++;
-      this.itemsInCart.push(item);
-      console.log("******" + this.itemsInCart);
+      this.cartSvc.additem(item);    
+      
+      // this.itemsInCart.push(item);
+      // console.log("******" + this.itemsInCart);
     }
   
     decrementQty(item: any) {
       if(item.quantity > 0) {
         item.quantity--;
+        this.cartSvc.removeitem(item,item.cost);
       }
   }
 

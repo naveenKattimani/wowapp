@@ -1,6 +1,6 @@
 page-shakes {
     .toolbar-background {
-        background-color: rgb(255, 252, 255);
+        background-color: greenyellow;
     }
 
     .toolbar-md {
@@ -16,6 +16,10 @@ page-shakes {
     ion-label    {
         color: #000000fb;
         font-size: 12px;
+    }
+
+    ion-title    {
+        margin-left: 50px;
     }
 
     button {

@@ -1,6 +1,6 @@
 page-burger {
     .toolbar-background {
-        background-color: rgb(255, 252, 255);
+        background-color: greenyellow;
     }
 
     .toolbar-md {
@@ -12,10 +12,14 @@ page-burger {
         font-size: 1em;
         font-weight: 300;
         color: #424242;
+        float: centre;
     }
     ion-label    {
         color: #000000fb;
         font-size: 12px;
+    }
+    ion-title    {
+        margin-left: 75px;
     }
 
     button {

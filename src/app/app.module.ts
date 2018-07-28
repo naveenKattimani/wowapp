@@ -14,6 +14,7 @@ import { ProfilePage } from '../pages/profile/profile';
 import { MenuPage } from '../pages/menu/menu';
 import { BurgerPage } from '../pages/burger/burger';
 import { ShakesPage } from '../pages/shakes/shakes';
+import { CartServiceProvider } from '../providers/cart-service/cart-service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ShakesPage } from '../pages/shakes/shakes';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CartServiceProvider
   ]
 })
 export class AppModule {}
